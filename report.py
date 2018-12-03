@@ -49,14 +49,11 @@ output: pdf_document
             '%.3f' % funcoes.coeficiente_variacao([funcoes.coeficiente_variacao(i) for i in data['temperatura']])
         ))
         f.write('\n\n')
-        plt = plots.plot_save_regression([funcoes.media(i) for i in data['temperatura']], 1)
         f.write(analisadores.assimetria([funcoes.media(i) for i in data['temperatura']]) + '\n\n')
         f.write(analisadores.curtose([funcoes.media(i) for i in data['temperatura']]) + '\n\n')
-        f.write("Função de regressão linear correspondente: $f(x) = %.5fx + %.5f$\n\n" % (plt['coef_a'], plt['coef_b']))
-        f.write('![Histograma de Temperaturas]({})\n\n'.format(
+        f.write('![Histograma de Temperaturas]({})'.format(
             plots.plot_save_histogram([funcoes.media(i) for i in data['temperatura']])
         ))
-        f.write('![Regressão Linear de Temperaturas]({})\n\n'.format(plt['nome']))
 
         f.write('\\newpage\n\n')
 
@@ -97,14 +94,11 @@ output: pdf_document
             '%.3f' % funcoes.coeficiente_variacao([funcoes.coeficiente_variacao(i) for i in data['ponto_orvalho']])
         ))
         f.write('\n\n')
-        plt = plots.plot_save_regression([funcoes.media(i) for i in data['ponto_orvalho']], 2)
         f.write(analisadores.assimetria([funcoes.media(i) for i in data['ponto_orvalho']]) + '\n\n')
         f.write(analisadores.curtose([funcoes.media(i) for i in data['ponto_orvalho']]) + '\n\n')
-        f.write("Função de regressão linear correspondente: $f(x) = %.5fx + %.5f$\n\n" % (plt['coef_a'], plt['coef_b']))
-        f.write('![Histograma de Temperatura de Ponto de Orvalho]({})\n\n'.format(
+        f.write('![Histograma de Temperatura de Ponto de Orvalho]({})'.format(
             plots.plot_save_histogram([funcoes.media(i) for i in data['ponto_orvalho']])
         ))
-        f.write('![Regressão Linear de Temperatura de Ponto de Orvalho]({})\n\n'.format(plt['nome']))
 
         f.write('\\newpage\n\n')
 
@@ -144,11 +138,8 @@ output: pdf_document
             '%.3f' % funcoes.coeficiente_variacao([funcoes.coeficiente_variacao(i) for i in data['pressao']])
         ))
         f.write('\n\n')
-        plt = plots.plot_save_regression([funcoes.media(i) for i in data['pressao']], 3)
         f.write(analisadores.assimetria([funcoes.media(i) for i in data['pressao']]) + '\n\n')
         f.write(analisadores.curtose([funcoes.media(i) for i in data['pressao']]) + '\n\n')
-        f.write("Função de regressão linear correspondente: $f(x) = %.5fx + %.5f$\n\n" % (plt['coef_a'], plt['coef_b']))
-        f.write('![Histograma de Pressão Atmosférica]({})\n\n'.format(
+        f.write('![Histograma de Pressão Atmosférica]({})'.format(
             plots.plot_save_histogram([funcoes.media(i) for i in data['pressao']])
         ))
-        f.write('![Regressão Linear de Pressão Atmosférica]({})\n\n'.format(plt['nome']))
